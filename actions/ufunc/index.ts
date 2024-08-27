@@ -16,5 +16,5 @@ export async function main(params: any) {
 
     logger.info('In the ufunc function')
 
-    return { name: "ufunc" }
+    return { name: "ts-ufunc" }
 }
