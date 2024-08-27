@@ -1,0 +1,16 @@
+application:
+  actions: actions
+  runtimeManifest:
+    packages:
+      ufunc:
+        license: Apache-2.0
+        actions:
+          ufunc:
+            function: actions/ufunc/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: true
+              final: true
