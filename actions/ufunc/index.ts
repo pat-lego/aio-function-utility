@@ -1,5 +1,4 @@
-import { Core } from '@adobe/aio-sdk'
-
+import {Core} from '@adobe/aio-sdk';
 
 /**
  * This is a sample action showcasing how to access an external API
@@ -10,11 +9,10 @@ import { Core } from '@adobe/aio-sdk'
  *   - Remove the Authorization header from the array passed in checkMissingRequestInputs
  *   - The two steps above imply that every client knowing the URL to this deployed action will be able to invoke it without any authentication and authorization checks against Adobe Identity Management System
  *   - Make sure to validate these changes against your security requirements before deploying the action
+ *  @typescript-eslint/no-explicit-any
  */
 export async function main(params: any) {
-    const logger = Core.Logger('main', { level: params.LOG_LEVEL || 'info' })
-
-    logger.info('In the ufunc function')
-
-    return { name: "ts-ufunc" }
+  const logger = Core.Logger('main', {level: params.LOG_LEVEL || 'info'});
+  logger.info('In the ufunc function');
+  return {name: 'ts-ufunc'};
 }

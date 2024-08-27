@@ -8,20 +8,17 @@
   },
   "devDependencies": {
     "@openwhisk/wskdebug": "^1.3.0",
-    "eslint": "^8",
-    "gts": "^5.3.1",
+    "@types/node": "20.12.7",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0",
     "typescript": "^5.4.3",
-    "@types/node": "20.12.7"
+    "typescript-eslint": "^8.3.0"
   },
   "scripts": {
-    "lint": "gts lint",
-    "lint:fix": "npm run lint -- --fix",
-    "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "lint": "eslint ."
   },
   "engines": {
     "node": ">=18"
