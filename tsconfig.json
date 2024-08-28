@@ -1,5 +1,16 @@
 {
   "compilerOptions": {
-    "rootDir": "."
+    "target": "ES2017",
+    "moduleResolution":"node",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@fx/*": ["./actions/ufunc/function/*"],
+      "@ops/*": ["./actions/ufunc/function/operations/*"]
+    },
+    "plugins": [{
+      "transform": "@zerollup/ts-transform-paths",
+      "exclude": ["*"]
+    }]
   }
 }
