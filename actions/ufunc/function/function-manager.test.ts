@@ -16,7 +16,7 @@ beforeEach(() => {
             return "F1";
         },
         invoke(input) {
-            return <Result<string>> {
+            return {
                 error: undefined,
                 result: 'Hello'
             }
@@ -40,7 +40,7 @@ beforeEach(() => {
             return "F3";
         },
         invoke(input) {
-            return <Result<string>> {
+            return {
                 error: undefined,
                 result: 'Hello'
             }
