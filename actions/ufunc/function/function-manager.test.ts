@@ -3,10 +3,10 @@ import FunctionManager from './function-manager';
 import Function from './function';
 import Result from './result';
 
-let fxMgr;
-let f1;
-let f2;
-let f3;
+let fxMgr: FunctionManager;
+let f1: Function;
+let f2: Function;
+let f3: Function;
 
 beforeEach(() => {
     fxMgr = new FunctionManager();
@@ -16,7 +16,7 @@ beforeEach(() => {
             return "F1";
         },
         invoke(input) {
-            return {
+            return <Result<string>> {
                 error: undefined,
                 result: 'Hello'
             }
@@ -28,7 +28,7 @@ beforeEach(() => {
             return "F1";
         },
         invoke(input) {
-            return {
+            return <Result<string>> {
                 error: undefined,
                 result: 'Hello'
             }
@@ -40,7 +40,7 @@ beforeEach(() => {
             return "F3";
         },
         invoke(input) {
-            return {
+            return <Result<string>> {
                 error: undefined,
                 result: 'Hello'
             }
