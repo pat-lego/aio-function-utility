@@ -1,4 +1,4 @@
-import Function from '@fx/function';
+import Function from './function';
 import { Core } from '@adobe/aio-sdk';
 
 export default class FunctionManager {

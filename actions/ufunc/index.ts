@@ -1,6 +1,6 @@
 import {Core} from '@adobe/aio-sdk';
-import FunctionManager from '@fx/function-manager';
-import Name from '@ops/name';
+import FunctionManager from './function/function-manager';
+import Name from './function/operations/name';
 
 export async function main(params: any) {
   const logger = Core.Logger('main', {level: params.LOG_LEVEL || 'info'});

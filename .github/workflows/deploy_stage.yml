@@ -20,8 +20,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
-        run: npm i
+      - name: npm ci
+        run: npm ci
       - name: npm compile
         run: npm run compile
       - name: Setup CLI

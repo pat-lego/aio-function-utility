@@ -1,4 +1,4 @@
-import Result from "@fx/result";
+import Result from "./result";
 
 export default interface Function<T = unknown> {
     name(): string;

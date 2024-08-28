@@ -1,5 +1,5 @@
-import Function from "@fx/function";
-import Result from "@fx/result";
+import Function from "../function";
+import Result from "../result";
 
 export default class Name implements Function<String> {
 
