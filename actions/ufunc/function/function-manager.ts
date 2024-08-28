@@ -16,8 +16,8 @@ export default class FunctionManager {
 
         const r: Function = this.get(f.name());
         if (typeof r === 'undefined') {
-            this.#logger.info(`Registered ${f.name()}`);
-            this.#functions.push(r);
+            this.#logger.info(`Registered Function with name ${f.name()}`);
+            this.#functions.push(f);
         }
     }
 
@@ -26,16 +26,26 @@ export default class FunctionManager {
             return;
         }
         for (const f of fx) {
-            const r: Function = this.get(f.name());
-            if (typeof r === 'undefined') {
-                this.#logger.info(`Registered ${f.name()}`);
-                this.#functions.push(r);
-            }
+            this.register(f);
         }
 
     }
 
+    unregister(fx: Function): void {
+        if (typeof fx === 'undefined') {
+            return;
+        }
+        this.#functions = this.#functions.filter(i => i.name() !== fx.name());
+    }
+
     get(fn: string): Function | undefined {
-        return this.#functions.find(i => i.name() === fn);
+        if (this.#functions.length === 0) {
+            return undefined;
+        } 
+       return this.#functions.find(i => i.name() === fn);
+    }
+
+    num(): number {
+        return this.#functions.length;
     }
 }
