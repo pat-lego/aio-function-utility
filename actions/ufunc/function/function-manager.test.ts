@@ -3,10 +3,10 @@ import FunctionManager from './function-manager';
 import Function from './function';
 import Result from './result';
 
-let fxMgr: FunctionManager;
-let f1: Function;
-let f2: Function;
-let f3: Function;
+let fxMgr;
+let f1;
+let f2;
+let f3;
 
 beforeEach(() => {
     fxMgr = new FunctionManager();
