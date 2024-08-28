@@ -28,7 +28,7 @@ beforeEach(() => {
             return "F1";
         },
         invoke(input) {
-            return <Result<string>> {
+            return {
                 error: undefined,
                 result: 'Hello'
             }
