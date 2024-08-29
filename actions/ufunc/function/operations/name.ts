@@ -8,12 +8,12 @@ export default class Name implements Function<String> {
     name(): string {
         return this.#name;
     }
-    invoke(input: {[key: string]: string}): Result<String> {
+    invoke(input: {[key: string]: string}): Promise<Result<String>> {
         if(input[this.#name]) {
-            return {
+            return Promise.resolve({
                 error: undefined,
                 result: `Hello ${input[this.#name]}`,
-            }
+            })
         }
     }
 

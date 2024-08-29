@@ -1,12 +1,20 @@
 import Function from './function';
 import { Core } from '@adobe/aio-sdk';
+import Result from './result';
 
 export default class FunctionManager {
     #functions: Array<Function>;
     #logger = Core.Logger('fxmgr', {level: 'info'});
 
-    constructor() {
-        this.#functions = new Array<Function>();
+    constructor(ops?: {fx?: Array<Function>}) {
+        if (ops?.fx) {
+            this.#functions = ops.fx.filter((f, i) => {
+                const _value = f.name()
+                return i === ops.fx.findIndex(f => f.name() === _value)
+            });
+        } else {
+            this.#functions = new Array<Function>();
+        }
     }
 
     register(f: Function): void {
@@ -47,5 +55,18 @@ export default class FunctionManager {
 
     num(): number {
         return this.#functions.length;
+    }
+
+    execute(operation: string, ops: {input: {[key: string]: string}}): Promise<Result> {
+        if (typeof operation === 'undefined') {
+            return undefined;
+        }
+        if (typeof this.get(operation) === 'undefined') {
+            return undefined;
+        }
+        
+        const fx = this.get(operation);
+
+        return fx.invoke(ops.input);
     }
 }

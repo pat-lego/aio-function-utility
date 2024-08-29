@@ -1,4 +1,4 @@
-export default interface Result<T> {
+export default interface Result<T = unknown> {
     /**
      * An error if any
      */
